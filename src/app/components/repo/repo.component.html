@@ -13,7 +13,7 @@
         Issues: {{repo.open_issues_count}}
       </span>
       <span>
-        Submitted {{repo.pushed_at}} days ago by {{repo.owner.login}}
+        Submitted {{repo.pushed_at | amTimeAgo}} by {{repo.owner.login}}
       </span>
     </div>
   </a>

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { PWAService } from './services/pwa/pwa.service';
 
 @Component({
   selector: 'app-root',
@@ -6,6 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'trending-repos';
-  constructor(){ }
+  title = 'Trending Repos';
+  // PWAService needed in the constructor to check if any new version exists!
+  constructor(pWAService: PWAService){ }
 }

@@ -9,7 +9,7 @@ import { RepoService } from 'src/app/services/repo/repo.service';
 })
 export class HomePage implements OnInit {
   repos: Repo[] = [];
-  page = 1;
+  page = 33;
   loading = true;
   errorMsg = '';
   constructor(private repoService: RepoService) { }
@@ -24,21 +24,20 @@ export class HomePage implements OnInit {
     this.repoService.getRepos(this.page)
     .subscribe({
       next: (v) => {
+        this.loading = false;
         if(v && v.items && v.items.length > 0){
           this.repos = this.repos.concat(v.items);
           this.page++;
         }
       },
       error: (e) => {
+        this.loading = false;
         // showing the message
         this.errorMsg = JSON.stringify(e);
         // make the error message dissapear after 3 sec!
         setTimeout(() => {
           this.errorMsg = '';
         }, 3000);
-      },
-      complete: () => {
-        this.loading = false;
       }
     })
   }
