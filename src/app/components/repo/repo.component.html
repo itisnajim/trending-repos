@@ -7,10 +7,10 @@
     <p>{{repo.description}}</p>
     <div class="inlined">
       <span class="outlined">
-        Stars: {{repo.stargazers_count | shortNumber}}
+        Stars: {{(repo.stargazers_count || 0) | shortNumber}}
       </span>
       <span class="outlined">
-        Issues: {{repo.open_issues_count | shortNumber}}
+        Issues: {{(repo.open_issues_count || 0) | shortNumber}}
       </span>
       <span>
         Submitted {{repo.pushed_at | amTimeAgo}} by {{repo.owner.login}}
