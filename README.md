@@ -1,6 +1,13 @@
 # TrendingRepos
+A small webapp that will list the most starred Github repos that were created in the last 30 days.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.4.
+
+## External libraries used
+
+* ngx-infinite-scroll: for fetching more repos as the user scrolls.
+
+* ngx-moment: Date formating.
 
 ## Development server
 

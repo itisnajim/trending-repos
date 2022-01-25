@@ -9,7 +9,7 @@ import { RepoService } from 'src/app/services/repo/repo.service';
 })
 export class HomePage implements OnInit {
   repos: Repo[] = [];
-  page = 33;
+  page = 1;
   loading = true;
   errorMsg = '';
   constructor(private repoService: RepoService) { }
