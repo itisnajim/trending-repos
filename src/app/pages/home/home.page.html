@@ -1,1 +1,15 @@
-<app-repo *ngFor="let repo of repos" [repo]="repo"></app-repo>
+<div
+    class="repos-container"
+    infiniteScroll
+    [infiniteScrollDistance]="2"
+    [infiniteScrollThrottle]="50"
+    (scrolled)="onScroll()"
+>
+    <app-repo *ngFor="let repo of repos" [repo]="repo"></app-repo>
+</div>
+<div class="loading toast" *ngIf="loading">
+  <p>Loading {{page > 1 ? 'more ' : ''}}repos..</p>
+</div>
+<div class="error toast" *ngIf="errorMsg">
+  <p>{{errorMsg}}</p>
+</div>

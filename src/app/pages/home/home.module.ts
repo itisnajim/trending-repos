@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+
 import { HomePageRoutingModule } from './home-routing.module';
 import { HomePage } from './home.page';
 import { RepoComponent } from '../../components/repo/repo.component';
@@ -10,7 +12,8 @@ import { RepoComponent } from '../../components/repo/repo.component';
   imports: [
     CommonModule,
     FormsModule,
-    HomePageRoutingModule
+    HomePageRoutingModule,
+    InfiniteScrollModule
   ],
   declarations: [
     HomePage,

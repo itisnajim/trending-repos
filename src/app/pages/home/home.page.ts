@@ -9,19 +9,42 @@ import { RepoService } from 'src/app/services/repo/repo.service';
 })
 export class HomePage implements OnInit {
   repos: Repo[] = [];
+  page = 1;
+  loading = true;
+  errorMsg = '';
   constructor(private repoService: RepoService) { }
 
   ngOnInit(): void {
-    this.repoService.getRepos()
+    this.loadRepos()
+  }
+
+  loadRepos(){
+    this.loading = true; 
+    this.errorMsg = '';
+    this.repoService.getRepos(this.page)
     .subscribe({
       next: (v) => {
         if(v && v.items && v.items.length > 0){
           this.repos = this.repos.concat(v.items);
+          this.page++;
         }
       },
-      error: (e) => console.error(e),
-      complete: () => console.info('complete') 
+      error: (e) => {
+        // showing the message
+        this.errorMsg = JSON.stringify(e);
+        // make the error message dissapear after 3 sec!
+        setTimeout(() => {
+          this.errorMsg = '';
+        }, 3000);
+      },
+      complete: () => {
+        this.loading = false;
+      }
     })
+  }
+
+  onScroll() {
+    this.loadRepos();
   }
 
 }
