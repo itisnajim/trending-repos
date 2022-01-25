@@ -1,0 +1,30 @@
+.repo-container{
+  padding: 16px;
+  display: flex;
+
+  .owner-container{
+    width: 136px;
+    height: 136px;
+    flex-shrink: 0;
+    img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: 12px;
+    .inlined{
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .outlined{
+      border: 1px black solid;
+      padding: 6px;
+    }
+  }
+}

@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 
 import { HomePageRoutingModule } from './home-routing.module';
 import { HomePage } from './home.page';
+import { RepoComponent } from '../../components/repo/repo.component';
 
 @NgModule({
   imports: [
@@ -12,7 +13,8 @@ import { HomePage } from './home.page';
     HomePageRoutingModule
   ],
   declarations: [
-    HomePage
+    HomePage,
+    RepoComponent
   ]
 })
 export class HomePageModule {}

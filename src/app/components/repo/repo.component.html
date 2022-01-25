@@ -1,0 +1,20 @@
+<div class="repo-container" *ngIf="repo">
+  <a class="owner-container" href="{{repo.owner.html_url}}">
+    <img src="{{repo.owner.avatar_url}}" alt="Owner Avatar">
+  </a>
+  <a class="info" href="{{repo.html_url}}">
+    <h1>{{repo.name}}</h1>
+    <p>{{repo.description}}</p>
+    <div class="inlined">
+      <span class="outlined">
+        Stars: {{repo.stargazers_count}}
+      </span>
+      <span class="outlined">
+        Issues: {{repo.open_issues_count}}
+      </span>
+      <span>
+        Submitted {{repo.pushed_at}} days ago by {{repo.owner.login}}
+      </span>
+    </div>
+  </a>
+</div>
