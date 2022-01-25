@@ -10,6 +10,7 @@ import { HomePageRoutingModule } from './home-routing.module';
 import { HomePage } from './home.page';
 import { RepoComponent } from '../../components/repo/repo.component';
 import { LazyImgDirective } from 'src/app/directives/lazy-img/lazy-img.directive';
+import { ShortNumberPipe } from 'src/app/pipes/short-number/short-number.pipe';
 
 @NgModule({
   imports: [
@@ -22,7 +23,8 @@ import { LazyImgDirective } from 'src/app/directives/lazy-img/lazy-img.directive
   declarations: [
     HomePage,
     RepoComponent,
-    LazyImgDirective
+    LazyImgDirective,
+    ShortNumberPipe
   ]
 })
 export class HomePageModule {}
