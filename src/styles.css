@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+img {
+  max-width: 100%;
+}
+
+body {
+  font-family: 'Helvetica';
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+/*# sourceMappingURL=styles.css.map */

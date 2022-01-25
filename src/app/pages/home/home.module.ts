@@ -9,6 +9,7 @@ import { MomentModule } from 'ngx-moment';
 import { HomePageRoutingModule } from './home-routing.module';
 import { HomePage } from './home.page';
 import { RepoComponent } from '../../components/repo/repo.component';
+import { LazyImgDirective } from 'src/app/directives/lazy-img/lazy-img.directive';
 
 @NgModule({
   imports: [
@@ -20,7 +21,8 @@ import { RepoComponent } from '../../components/repo/repo.component';
   ],
   declarations: [
     HomePage,
-    RepoComponent
+    RepoComponent,
+    LazyImgDirective
   ]
 })
 export class HomePageModule {}
